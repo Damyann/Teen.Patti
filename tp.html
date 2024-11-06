@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tp.css">
+    <title>Teen Patti Panel</title>
+</head>
+<body>
+    <div class="panel">
+        <div class="player-section">
+            <div class="player" id="player-b">
+                <h3>Player B</h3>
+                <div class="card-container">
+                    <div class="card-slot top-slot">
+                        <div class="card-label">3rd</div>
+                    </div>
+                    <div class="card-slot top-slot">
+                        <div class="card-label">2nd</div>
+                    </div>
+                    <div class="card-slot top-slot">
+                        <div class="card-label">1st</div>
+                    </div>
+                </div>
+            </div>
+            <div class="winner-section">Winner</div>
+            <div class="player" id="player-a">
+                <h3>Player A</h3>
+                <div class="card-container">
+                    <div class="card-slot top-slot">
+                        <div class="card-label">3rd</div>
+                    </div>
+                    <div class="card-slot top-slot">
+                        <div class="card-label">2nd</div>
+                    </div>
+                    <div class="card-slot top-slot">
+                        <div class="card-label">1st</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-section">
+            <div class="card-display">
+                <div class="dealer-name">
+                    Dealer:
+                </div>
+                <div class="card-slot single-slot">
+                    <!-- Основна карта -->
+                </div>
+                <div class="buttons-section">
+                    <button class="btn blue-btn">Change Dealer</button>
+                    <button class="btn green-btn">Manual Input</button>
+                    <button class="btn red-btn">Start Undo</button>
+                    <button class="btn red-btn">Cancel Round</button>
+                    <button class="btn draw-btn">Draw</button>
+                </div>
+            </div>
+            <div class="chat-section">
+                <h3>Chat</h3>
+                <div class="chat-box">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="tp.js"></script>
+    <script src="card.js"></script>
+</body>
+</html>

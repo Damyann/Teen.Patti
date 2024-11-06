@@ -1,0 +1,316 @@
+/* ---------- Глобален стил за тялото и панела ---------- */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: radial-gradient(circle at top left, #f5f7fa, #e9ecef);
+    color: #333;
+    overflow: hidden;
+}
+
+.panel {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    width: 100vw;
+    height: 100vh;
+    gap: 15px;
+    padding: 26px;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #fad0d0, #f9b4c3);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 0;
+}
+
+/* ---------- Секция за играчите и победителя ---------- */
+.player-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#player-a, #player-b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(145deg, #f3f5f7, #d7dbde);
+    border: 1px solid #dfe3e6;
+    border-radius: 15px;
+    padding: 15px;
+    height: 90%;
+    width: 38vw;
+}
+
+#player-a h3, #player-b h3 {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #444;
+    margin: 0;
+    text-align: center;
+    position: relative;
+    top: -10px;
+}
+
+.winner-section {
+    font-weight: bold;
+    font-size: 1.8em;
+    color: #444;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* ---------- Стилове за слотовете на картите ---------- */
+.card-container {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card-slot {
+    position: relative;
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    width: 225px;
+    height: 335px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.card-slot:hover {
+    transform: scale(1.05);
+}
+
+.card-label {
+    position: absolute; /* Поставяне над елементите */
+    top: -20px; /* Местоположение над слота */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ff4500; /* Ярък цвят за контраст */
+    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачен фон */
+    padding: 5px 10px;
+    border-radius: 8px;
+    z-index: 1000; /* Много висок z-index за гарантирано виждане */
+    text-align: center;
+    display: block !important; /* Принудително показване, ако нещо го скрива */
+    visibility: visible !important; /* Принудително видимо */
+}
+
+/* ---------- Горни слотове за картите ---------- */
+.top-slot {
+    position: relative;
+    width: 225px;
+    height: 335px;
+    margin: -1px;
+}
+
+.top-slot .card-image {
+    width: 225px;
+    height: 415px;
+    position: absolute;
+    top: -35px;
+    left: -3px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ---------- Долен слот за картата ---------- */
+.card-display {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background: linear-gradient(145deg, #f3f5f7, #d7dbde);
+    border: 1px solid #dfe3e6;
+    border-radius: 15px;
+    padding: 10px;
+    height: 100%;
+    width: calc(50% - 10px);
+}
+
+.card-display .single-slot {
+    position: absolute;
+    left: 30px;
+    bottom: 90px;
+    width: 235px;
+    height: 335px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+}
+
+.card-display .single-slot .card-image {
+    width: 225px;
+    height: 425px;
+    margin-left: 10px;
+    margin-right: 16px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ---------- Долна секция за картите и чата ---------- */
+.bottom-section {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin-top: -15px;
+    box-sizing: border-box;
+}
+
+/* ---------- Секция за бутони ---------- */
+.buttons-section {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 22px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Единен стил за бутоните */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.7);
+    background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+    position: relative; /* За позициониране на светлинката */
+    overflow: hidden; /* Скрива светлинката извън границите на бутона */
+}
+
+/* Анимация на светлинка (скрита по подразбиране) */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -100%; /* Светлинката започва извън бутона */
+    width: 150%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: rotate(45deg);
+    transition: left 0.6s ease, opacity 0.6s ease; /* Плавен преход */
+    opacity: 0; /* Скрива светлината по подразбиране */
+}
+
+/* При hover се активира светлинката */
+.btn:hover::before {
+    left: 100%; /* Светлинката минава през бутона */
+    opacity: 1; /* Плавно се появява */
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.25), -6px -6px 15px rgba(255, 255, 255, 0.8);
+}
+
+/* Анимация при клик */
+.btn:active {
+    transform: translateY(2px); /* Леко преместване надолу */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.7);
+}
+
+/* Стил за всеки цвят на бутон */
+.blue-btn {
+    background: linear-gradient(145deg, #007bff, #0056b3);
+}
+
+.green-btn {
+    background: linear-gradient(145deg, #28a745, #1e7d34);
+}
+
+.red-btn {
+    background: linear-gradient(145deg, #dc3545, #b21f2d);
+}
+
+.draw-btn {
+    background: linear-gradient(145deg, #ffb400, #ff8c00);
+}
+
+
+/* ---------- Чат секция ---------- */
+.chat-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(145deg, #f3f5f7, #d7dbde);
+    border: 1px solid #dfe3e6;
+    border-radius: 15px;
+    padding: 10px;
+    height: 100%;
+    width: calc(50% - 10px);
+}
+
+.chat-section h3 {
+    background-color: #28a745;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.chat-box {
+    flex-grow: 1;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+    overflow-y: auto;
+    margin-top: 10px;
+    width: 100%;
+    height: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.message-section, .betting-time {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 20px;
+    color: #ff6f00;
+    font-weight: bold;
+}
+
+.dealer-name {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+    background-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}

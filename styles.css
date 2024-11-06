@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Great+Vibes&family=Lobster&display=swap');
+
+/* Нулиране на полетата и подравняването */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(145deg, #3b0d0d, #432b2b, #100f2c);
+    background-size: 200% 200%;
+    position: relative;
+    animation: animatedBackground 10s ease infinite;
+}
+
+@keyframes animatedBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Индийски орнаменти на фона */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+    background-size: 400px 400px;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* Навигационна лента */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #ffdf00;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Заглавие с меко златисто сияние и фин контур */
+.header h1 {
+    font-size: 4em;
+    font-family: 'Great Vibes', cursive;
+    color: #ffdf00;
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(255, 223, 0, 0.8),
+        0 0 40px rgba(255, 223, 0, 0.6),
+        0 0 60px rgba(255, 223, 0, 0.4);
+    margin-bottom: 50px;
+    position: relative;
+    animation: softGlowPulse 3s ease-in-out infinite;
+}
+
+@keyframes softGlowPulse {
+    0%, 100% {
+        text-shadow:
+            3px 3px 6px rgba(0, 0, 0, 0.5),
+            0 0 20px rgba(255, 223, 0, 0.8),
+            0 0 40px rgba(255, 223, 0, 0.6),
+            0 0 60px rgba(255, 223, 0, 0.4);
+    }
+    50% {
+        text-shadow:
+            3px 3px 6px rgba(0, 0, 0, 0.5),
+            0 0 30px rgba(255, 223, 0, 1),
+            0 0 50px rgba(255, 223, 0, 0.8),
+            0 0 70px rgba(255, 223, 0, 0.6);
+    }
+}
+
+/* Стилове за бутоните */
+.styled-button {
+    font-family: 'Lobster', cursive;
+    padding: 15px 50px;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(145deg, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 15px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    background-size: 200% 200%;
+    animation: subtleGradientShift 6s ease infinite;
+    margin: 20px;
+}
+
+@keyframes subtleGradientShift {
+    0% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0 50%; }
+}
+
+.styled-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-30deg);
+    transition: all 0.5s ease;
+}
+
+.styled-button:hover::before {
+    left: 125%;
+    transition: all 0.7s ease;
+}
+
+.styled-button:hover {
+    transform: translateY(-7px) scale(1.1) rotate(3deg);
+    box-shadow: 0 15px 30px rgba(255, 75, 43, 0.6), 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: buttonPulse 0.8s ease infinite alternate;
+}
+
+/* Мек светещ ефект при задържане */
+.styled-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 50px;
+}
+
+.styled-button:hover::after {
+    opacity: 0.9;
+}
+
+.styled-button:active {
+    transform: translateY(-2px) scale(0.98);
+    box-shadow: 0 6px 10px rgba(255, 75, 43, 0.4), 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Орнаменти вътре в бутоните */
+.styled-button .ornament {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    background: url('https://www.transparenttextures.com/patterns/arabesque.png');
+    background-size: cover;
+    opacity: 0.3;
+    transform: translate(-50%, -50%) rotate(45deg);
+    pointer-events: none;
+    z-index: 0;
+    animation: rotateOrnament 10s linear infinite;
+}
+
+@keyframes rotateOrnament {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Допълнителни анимации за декорация около бутоните */
+.styled-button::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
+    border-radius: 50%;
+    border: 2px dashed rgba(255, 223, 0, 0.5);
+    animation: borderPulse 2s infinite ease-in-out;
+}
+
+@keyframes borderPulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
